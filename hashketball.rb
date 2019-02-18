@@ -198,8 +198,20 @@ def player_numbers(team_name)
   return numbers
 end
 
-def player_stats
-
+def player_stats(name)
+ game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player, stats|
+          if player == name
+            size = stats[:shoe]
+            return size
+          end
+        end
+      end
+    end
+  end
+end
 
 
 
