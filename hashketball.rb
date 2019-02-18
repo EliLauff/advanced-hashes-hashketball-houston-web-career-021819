@@ -225,6 +225,16 @@ def big_shoe_rebounds
   end
   biggest_shoe = sizes.max_by{|k,v| v}[0]
   
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player, stats|
+          if player == biggest_shoe
+            return stats[:rebounds]
+        end
+      end
+    end
+  end  
 end  
 
 
