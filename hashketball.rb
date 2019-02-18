@@ -204,8 +204,7 @@ def player_stats(name)
       if attribute == :players
         data.each do |player, stats|
           if player == name
-            size = stats[:shoe]
-            return size
+            return stats
           end
         end
       end
