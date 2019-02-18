@@ -213,7 +213,7 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
-  sizes = []
+  sizes = {}
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
       if attribute == :players
