@@ -182,6 +182,21 @@ def team_names
   return names
 end
 
+def player_numbers(team)
+  numbers = []
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |player, stats|
+            numbers.push(stats[:points])
+            return size
+          end
+        end
+      end
+    end
+  end
+end
+
 
 
 
